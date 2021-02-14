@@ -1,0 +1,51 @@
+
+# sudo ln -s /etc/nginx/sites-available/wedding.esantini.com /etc/nginx/sites-enabled/wedding.esantini.com
+
+# SUBDOMAIN wedding.esantini.com
+server {
+
+	# SSL configuration:
+	#
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+	ssl on;
+
+	server_name wedding.esantini.com;
+
+	root /home/pi/repos/wedding;
+
+  index index.html;
+
+  # Redirect all paths to wedding.esantini.com/
+  location / {
+    if (!-e $request_filename) {
+      rewrite ^ / permanent;
+    }
+  }
+
+  # URI routing
+  location /api/wedding-message {
+      limit_except POST {
+          deny all; 
+      }
+      error_page 403 = @405; # Convert deny response from 403 (Forbidden) to 405 (Method Not Allowed)
+      proxy_pass http://localhost:3001/api/wedding-message;
+  }
+  ssl_certificate /etc/letsencrypt/live/wedding.esantini.com/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/wedding.esantini.com/privkey.pem; # managed by Certbot
+
+}
+
+server {
+
+  if ($host = wedding.esantini.com) {
+      return 301 https://$host;
+  }
+
+	listen 80;
+	listen [::]:80;
+
+	server_name wedding.esantini.com;
+    return 404; # managed by Certbot
+
+}
