@@ -1,0 +1,14 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/esantini/wedding.git",
+  "author": "Esteban <esantinie@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node node_modules\\gulp\\bin\\gulp.js build"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
