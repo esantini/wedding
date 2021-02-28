@@ -83,7 +83,8 @@ span {
   Buttons               
 -----------------------------------------*/
 
-.arrow-btn i {
+.arrow-btn i,
+.dir-button {
   background: #000000;
   border-radius: 50%;
   color: #ffffff;
@@ -97,8 +98,24 @@ span {
   transition: 0.5s;
 }
 
-.arrow-btn i:hover {
+.arrow-btn i:hover,
+.dir-button:hover {
   background: #d7b065;
+  color: #ffffff;
+}
+.dir-button-container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+.dir-button {
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.arrow-btn.dir-button i {
+  background-color: transparent;
 }
 
 /*---------------------------------------
