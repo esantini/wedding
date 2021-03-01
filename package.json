@@ -6,9 +6,11 @@
   "author": "Esteban <esantinie@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node dev",
     "build": "node node_modules\\gulp\\bin\\gulp.js build"
   },
   "dependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "livereload": "^0.9.1"
   }
 }
