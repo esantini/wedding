@@ -1,6 +1,8 @@
 
 "use strict";
 
+const IS_PROD = window.location.href.startsWith('https://wedding.esantini.com');
+
 // PRE loader
 $(window).load(function () {
   $('.preloader').fadeOut(1000); // set duration in brackets 
@@ -27,16 +29,22 @@ initParallax();
 new WOW({ mobile: false }).init();
 
 function submitMessage() {
+  const name = inputName.value;
+  const email = inputEmail.value;
+  const message = inputMessage.value;
+  console.log('Posting message: ', { name, email, message });
 
-  const name = $('#inputName');
-  const email = $('#inputEmail');
-  const message = $('#inputMessage');
+  fetch(`${IS_PROD ? '' : 'http://localhost:3003'}/api/wedding-message`,
+    {
+      method: 'POST',
+      mode: IS_PROD ? 'cors' : 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    }
+  );
 
-  console.log({ name, email, message });
-
-  console.log(document.messageForm);
-
-  // action="/api/wedding-message"
   return false;
 }
 
