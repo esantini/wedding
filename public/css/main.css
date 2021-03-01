@@ -645,3 +645,10 @@ footer .dash-line {
   border-radius: 5px;
   padding: 42px 32px;
 }
+
+
+@media (max-width: 500px) {
+  #direcciones .container {
+    padding-left: 5px;
+  }
+}
