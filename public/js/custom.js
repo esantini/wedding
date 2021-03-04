@@ -28,11 +28,34 @@ initParallax();
 // WOW Animation js
 new WOW({ mobile: false }).init();
 
+function setSending() {
+  $('#contact').addClass('sending');
+  submit.disabled = true;
+  inputName.disabled = true;
+  inputEmail.disabled = true;
+  inputMessage.disabled = true;
+}
+function cancelSending() {
+  $('#contact').removeClass('sending');
+  submit.disabled = false;
+  inputName.disabled = false;
+  inputEmail.disabled = false;
+  inputMessage.disabled = false;
+}
+function setSent() {
+  $('#contact').removeClass('sending');
+  $('#contact').addClass('sent');
+}
+function setSendingError(err) {
+  $('#messageFormError').addClass('show');
+  $('#messageFormError .errorMessage').html(err);
+}
+
 function submitMessage() {
+  setSending();
   const name = inputName.value;
   const email = inputEmail.value;
   const message = inputMessage.value;
-  console.log('Posting message: ', { name, email, message });
 
   fetch(`${IS_PROD ? '' : 'http://localhost:3003'}/api/wedding-message`,
     {
@@ -43,7 +66,13 @@ function submitMessage() {
       },
       body: JSON.stringify({ name, email, message }),
     }
-  );
+  )
+    .then(setSent)
+    .catch(error => {
+      cancelSending();
+      setSendingError(error);
+      console.error(error);
+    });
 
   return false;
 }
