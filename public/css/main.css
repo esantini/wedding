@@ -231,7 +231,7 @@ footer {
 -----------------------------------------*/
 
 #home {
-  background: url("../images/La propuesta.jpg") 50% 0 repeat-y fixed;
+  background: url("../images/home-bg.jpg") 50% 0 repeat-y fixed;
   background-size: cover;
   background-position: center center;
   border-radius: 5px;
@@ -317,7 +317,7 @@ footer {
   cursor: zoom-in;
 }
 .nosotros-thumb img {
-  filter: grayscale(80%);
+  filter: grayscale(70%) sepia(0.5);
 }
 
 #nosotros .row {
@@ -381,6 +381,9 @@ footer {
   #nosotros #image-display.d .d img {
     max-width: 100%;
     transform: translate(30%, -50%);
+  }
+  #home > div {
+    width: 100%;
   }
 }
 

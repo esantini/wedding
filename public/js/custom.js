@@ -17,7 +17,7 @@ $(window).load(function () {
 
 // Parallax Js
 function initParallax() {
-  $('#home').parallax("100%", 0.3);
+  $('#home').parallax("0%", 0.3);
   $('#nosotros').parallax("20%", 0.3);
   $('#direcciones').parallax("40%", 0.3);
   $('#contact').parallax("60%", 0.3);
