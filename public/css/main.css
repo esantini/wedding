@@ -38,14 +38,15 @@ h6 {
 }
 
 h1 {
-  color: #3d3d3f;
-  font-family: "Playfair Display", serif;
-  font-size: 40px;
+  color: #4e82a7;
+  /* font-family: "Playfair Display", serif; */
+  font-family: "Pinyon Script", cursive;
+  font-size: 70px;
   line-height: normal;
 }
 
 h2 {
-  color: #575757;
+  color: #305c7a;
   font-size: 35px;
   line-height: normal;
 }
@@ -85,7 +86,7 @@ span {
 
 .arrow-btn i,
 .dir-button {
-  background: #000000;
+  background: #305c7a;
   border-radius: 50%;
   color: #ffffff;
   font-size: 20px;
@@ -167,10 +168,11 @@ a:focus {
 #about,
 #nosotros,
 #contact,
+#direcciones,
 footer {
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /*---------------------------------------
@@ -304,6 +306,7 @@ footer {
   top: 0;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
+  max-height: 410px;
 }
 
 #nosotros .nosotros-thumb:hover {
@@ -384,6 +387,9 @@ footer {
   }
   #home > div {
     width: 100%;
+  }
+  #about .about-pic {
+    display: none;
   }
 }
 
@@ -572,11 +578,7 @@ footer .dash-line {
 
 @media (max-width: 980px) {
   h1 {
-    font-size: 30px;
-  }
-
-  #about .about-thumb {
-    padding-left: 0px;
+    font-size: 60px;
   }
 
   #nosotros .nosotros-thumb {
@@ -586,7 +588,7 @@ footer .dash-line {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 27px;
+    font-size: 50px;
   }
 
   h2 {
@@ -613,7 +615,7 @@ footer .dash-line {
   }
 
   #about .about-thumb {
-    padding: 22px 12px;
+    padding: 22px;
     margin-top: 0px;
   }
 
@@ -631,9 +633,16 @@ footer .dash-line {
 /*---------------------------------------
   Direcciones styles              
 -----------------------------------------*/
+#contact .section-title {
+  padding-bottom: 0;
+}
+#contact {
+  padding-top: 20px;
+}
 
 #direcciones {
-  padding-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 0px;
 }
 
 .dir-row:before,
@@ -691,5 +700,17 @@ footer .dash-line {
 @media (max-width: 500px) {
   #direcciones .container {
     padding-left: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  #direcciones {
+    padding-top: 20px;
+  }
+  #direcciones .container {
+    padding-top: 20px;
+  }
+  #direcciones h3 {
+    margin-top: 0;
   }
 }
