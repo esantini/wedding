@@ -95,7 +95,11 @@ http://www.tooplate.com/view/2100-artist
     <section id="about" class="parallax-section">
       <div class="container">
         <div id="cuando-donde-container">
-          <img src="images/flower-bg.png" class="flower-background" />
+          <picture>
+            <source type="image/webp" srcset="images/flower-bg.webp" />
+            <source type="image/jpeg" srcset="images/flower-bg.jpg" />
+            <img src="images/flower-bg.png" class="flower-background" />
+          </picture>
           <div class="about-content">
             <div>
               <h3>cuando</h3>
@@ -122,16 +126,21 @@ http://www.tooplate.com/view/2100-artist
             desde entoces no hemos dejado de hablar.
           </p>
         </div>
-        <div class="row">
-          <div class="wow fadeInUp nosotros-pic" data-wow-delay="0.4s">
+        <div class="nosotros-pictures">
+          <div class="wow fadeInUp nosotros-pic vertical" data-wow-delay="0.4s">
             <!-- WORK THUMB -->
             <div class="nosotros-thumb a">
-              <img
-                src="images/primera.jpg"
-                class="img-responsive"
-                alt="Nuestra primer foto"
-                id="a"
-              />
+              <picture>
+                <source type="image/webp" srcset="images/primera.webp" />
+                <source type="image/jpeg" srcset="images/primera.jpg" />
+                <img
+                  src="images/primera.jpg"
+                  alt="Nuestra primer foto"
+                  id="a"
+                  width="624"
+                  height="1280"
+                />
+              </picture>
             </div>
             <h4>Nuestra primer foto</h4>
           </div>
@@ -139,39 +148,52 @@ http://www.tooplate.com/view/2100-artist
           <div class="wow fadeInUp nosotros-pic" data-wow-delay="0.6s">
             <!-- WORK THUMB -->
             <div class="nosotros-thumb b">
-              <img
-                src="images/propuesta.jpg"
-                class="img-responsive"
-                alt="La propuesta"
-                id="b"
-              />
+              <picture>
+                <source type="image/webp" srcset="images/propuesta.webp" />
+                <source type="image/jpeg" srcset="images/propuesta.jpg" />
+                <img
+                  src="images/propuesta.jpg"
+                  alt="La propuesta"
+                  id="b"
+                  width="640"
+                  height="640"
+                />
+              </picture>
             </div>
             <h4>La propuesta</h4>
           </div>
-        </div>
-        <div class="row">
-          <div class="wow fadeInUp nosotros-pic" data-wow-delay="0.8s">
+          <div class="wow fadeInUp nosotros-pic" data-wow-delay="0.4s">
             <!-- WORK THUMB -->
             <div class="nosotros-thumb c">
-              <img
-                src="images/Navidad.jpg"
-                class="img-responsive"
-                alt="Navidad"
-                id="c"
-              />
+              <picture>
+                <source type="image/webp" srcset="images/Navidad.webp" />
+                <source type="image/jpeg" srcset="images/Navidad.jpg" />
+                <img
+                  src="images/Navidad.jpg"
+                  alt="Navidad"
+                  id="c"
+                  width="1440"
+                  height="1439"
+                />
+              </picture>
             </div>
             <h4>Navidad</h4>
           </div>
 
-          <div class="wow fadeInUp nosotros-pic" data-wow-delay="1s">
+          <div class="wow fadeInUp nosotros-pic" data-wow-delay="0.6s">
             <!-- WORK THUMB -->
             <div class="nosotros-thumb d">
-              <img
-                src="images/Hiking.jpg"
-                class="img-responsive"
-                alt="Hiking"
-                id="d"
-              />
+              <picture>
+                <source type="image/webp" srcset="images/Hiking.webp" />
+                <source type="image/jpeg" srcset="images/Hiking.jpg" />
+                <img
+                  src="images/Hiking.jpg"
+                  alt="Hiking"
+                  id="d"
+                  width="1600"
+                  height="1066"
+                />
+              </picture>
             </div>
             <h4>Hiking</h4>
           </div>
@@ -340,7 +362,7 @@ http://www.tooplate.com/view/2100-artist
             </div>
             <div class="support-cus">
               <h4>Contact Info</h4>
-              <p><a href="#">hello@company.com</a></p>
+              <p><a href="#">esteban@esantini.com</a></p>
               <p>Tel: 010-020-0890</p>
             </div>
           </div>
@@ -386,12 +408,18 @@ http://www.tooplate.com/view/2100-artist
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+      async
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/custom.js"></script>
-    <script>
+    <script defer>
       // Live reload for debugging:
       if (!IS_PROD) {
         document.write(

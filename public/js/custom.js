@@ -6,7 +6,7 @@ const IS_PROD = window.location.href.startsWith('https://wedding.esantini.com');
 // PRE loader
 $(window).load(function () {
   $('.preloader').fadeOut(1000); // set duration in brackets 
-  $('.nosotros-thumb .img-responsive').on('click', showImage);
+  $('.nosotros-thumb img').on('click', showImage);
   $('.nosotros-thumb').on('click', hideImage);
   $(document).keyup(function (e) {
     if (e.key === "Escape") {
