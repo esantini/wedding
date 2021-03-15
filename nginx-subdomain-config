@@ -3,16 +3,9 @@
 
 # SUBDOMAIN wedding.esantini.com
 server {
-
-	# SSL configuration:
-	#
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
-	ssl on;
-
 	server_name wedding.esantini.com;
 
-	root /home/pi/repos/wedding;
+	root /home/pi/repos/wedding/public;
 
   index index.html;
 
@@ -31,16 +24,20 @@ server {
       error_page 403 = @405; # Convert deny response from 403 (Forbidden) to 405 (Method Not Allowed)
       proxy_pass http://localhost:3001/api/wedding-message;
   }
-  ssl_certificate /etc/letsencrypt/live/wedding.esantini.com/fullchain.pem; # managed by Certbot
-  ssl_certificate_key /etc/letsencrypt/live/wedding.esantini.com/privkey.pem; # managed by Certbot
+
+    listen [::]:443 ssl http2; # managed by Certbot
+    listen 443 ssl http2; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/esantini.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/esantini.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 
 server {
-
-  if ($host = wedding.esantini.com) {
-      return 301 https://$host;
-  }
+    if ($host = wedding.esantini.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
 
 	listen 80;
 	listen [::]:80;
