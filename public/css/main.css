@@ -172,7 +172,7 @@ a:focus {
 footer {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 /*---------------------------------------
@@ -431,15 +431,25 @@ footer {
 #image-display.b .b img,
 #image-display.c .c img,
 #image-display.d .d img {
-  max-width: 70%;
   position: relative;
-  transform: translate(60%, -50%);
+  transform: translate(-50%, -50%);
   top: 50%;
-  left: -30%;
+  left: 50%;
   filter: grayscale(0%);
+  max-width: 90%;
+  height: auto;
+  width: -webkit-fill-available;
+}
+@media (min-width: 550px) {
+  #image-display.a .a img {
+    max-width: initial;
+    max-height: 90%;
+    width: auto;
+    height: -webkit-fill-available;
+  }
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   #nosotros #image-display.a .a img,
   #nosotros #image-display.b .b img,
   #nosotros #image-display.c .c img,
@@ -447,8 +457,8 @@ footer {
     max-width: 90%;
     transform: translate(39%, -50%);
   }
-}
-@media (max-width: 768px) {
+} */
+/* @media (max-width: 768px) {
   #nosotros #image-display.a .a img,
   #nosotros #image-display.b .b img,
   #nosotros #image-display.c .c img,
@@ -459,7 +469,7 @@ footer {
   #home > div {
     width: 100%;
   }
-}
+} */
 
 /*---------------------------------------
   Contact section              
@@ -548,11 +558,11 @@ footer h4 {
 }
 
 footer a {
-  color: #aaa;
+  color: #fff;
 }
 
 footer a:hover {
-  color: #fff;
+  color: #d7b065;
 }
 
 footer .col-md-4 .support-cus:last-child {
@@ -608,7 +618,7 @@ footer .dash-line {
 .social-icon {
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 30px;
   text-align: center;
 }
 

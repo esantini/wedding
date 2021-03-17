@@ -77,11 +77,17 @@ function submitMessage() {
   return false;
 }
 
+let isImageShown = false;
 function showImage(e) {
   e.stopPropagation();
-  hideImage().addClass(e.target.id);
+  if (!isImageShown) {
+    hideImage().addClass(e.target.id);
+    isImageShown = true;
+  }
+  else hideImage();
 }
 function hideImage(e) {
   e?.stopPropagation();
+  isImageShown = false;
   return $(`#image-display`).removeClass('a b c d');
 }
