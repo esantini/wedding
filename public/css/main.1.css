@@ -812,3 +812,8 @@ footer .dash-line {
     margin-top: 0;
   }
 }
+
+#regalos-link {
+  width: 100%;
+  text-align: center;
+}
