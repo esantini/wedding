@@ -84,6 +84,7 @@ function showImage(e) {
     hideImage().addClass(e.target.id);
     isImageShown = true;
     history.pushState(null, null, window.location.pathname);
+    history.go(1);
   }
   else hideImage();
 }
