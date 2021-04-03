@@ -83,6 +83,7 @@ function showImage(e) {
   if (!isImageShown) {
     hideImage().addClass(e.target.id);
     isImageShown = true;
+    history.pushState(null, null, window.location.pathname);
   }
   else hideImage();
 }
@@ -91,3 +92,19 @@ function hideImage(e) {
   isImageShown = false;
   return $(`#image-display`).removeClass('a b c d');
 }
+
+// hideImage on back button press
+window.addEventListener('popstate', function (event) {
+  // The popstate event is fired each time when the current history entry changes.
+  if (isImageShown) {
+    hideImage();
+    // Stay on the current page.
+    history.pushState(null, null, window.location.pathname);
+  } else {
+    // Call Back button programmatically as per user confirmation.
+    history.back();
+    // Uncomment below line to redirect to the previous page instead.
+    // window.location = document.referrer // Note: IE11 is not supporting this.
+  }
+  history.pushState(null, null, window.location.pathname);
+}, false);
